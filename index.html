@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102b4e">
+  <meta name="description" content="Интерактивный тренажёр по формулам количества теплоты для 8 класса.">
+  <title>Теплота в формулах · Физика, 8 класс</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="questions.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Физика · 8 класс <span aria-hidden="true">/</span> подготовка к диктанту</div>
+          <h1>Теплота в формулах</h1>
+        </div>
+        <div class="header-mark" aria-hidden="true">Q<span>=</span>cmΔt</div>
+      </div>
+      <nav class="main-nav" aria-label="Режимы занятий">
+        <button type="button" class="nav-button active" data-view="learn" aria-current="page">Выучить</button>
+        <button type="button" class="nav-button" data-view="interactive">Интерактив</button>
+        <button type="button" class="nav-button" data-view="practice">Потренироваться</button>
+        <button type="button" class="nav-button" data-view="exam">Опрос</button>
+        <button type="button" class="nav-button" data-view="stats">Статистика</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="learn" class="view active" aria-labelledby="learn-title">
+        <div class="section-heading"><div><span class="kicker">01 / КОНСПЕКТ</span><h2 id="learn-title">Одна формула — шесть ответов</h2></div><p>Запомни основу, затем вырази нужную величину.</p></div>
+        <div class="formula-hero">
+          <div class="formula-hero-top"><span class="pill">Основная формула</span><span>нагревание и охлаждение</span></div>
+          <div class="hero-equation" aria-label="Q равно c умножить на m умножить на разность t два минус t один">Q <span>=</span> c<span>·</span>m<span>·</span>(t₂ − t₁)</div>
+          <div class="formula-hero-bottom"><span>Δt = t₂ − t₁</span><span>Q = cmΔt</span></div>
+        </div>
+        <div class="definition-grid">
+          <div class="definition"><strong>Q</strong><span>количество теплоты</span><small>джоуль · Дж</small></div>
+          <div class="definition"><strong>c</strong><span>удельная теплоёмкость</span><small>Дж/(кг·°C)</small></div>
+          <div class="definition"><strong>m</strong><span>масса тела</span><small>килограмм · кг</small></div>
+          <div class="definition"><strong>t₁ → t₂</strong><span>начальная → конечная</span><small>температура · °C</small></div>
+        </div>
+        <div class="content-grid">
+          <section class="card" aria-labelledby="derive-title">
+            <div class="card-heading"><span class="card-index">А</span><h3 id="derive-title">Что нужно найти?</h3></div>
+            <p class="card-intro">Нажми на величину: увидишь формулу и короткий ход решения.</p>
+            <div class="formula-targets" id="formula-targets" role="group" aria-label="Выбери искомую величину"></div>
+            <div class="derivation" id="derivation" aria-live="polite"></div>
+          </section>
+          <section class="card" aria-labelledby="sign-title">
+            <div class="card-heading"><span class="card-index">Б</span><h3 id="sign-title">Как меняется температура?</h3></div>
+            <div class="state-list">
+              <div class="state-item warm"><span class="state-icon">↑</span><div><strong>t₂ &gt; t₁</strong><span>тело нагревается · Δt &gt; 0</span></div></div>
+              <div class="state-item cool"><span class="state-icon">↓</span><div><strong>t₂ &lt; t₁</strong><span>тело остывает · Δt &lt; 0</span></div></div>
+              <div class="state-item still"><span class="state-icon">=</span><div><strong>t₂ = t₁</strong><span>температура не меняется · Δt = 0</span></div></div>
+            </div>
+            <p class="source-note">Пояснение к записи: при охлаждении Q = cm(t₂ − t₁) отрицательно. Если спрашивают, <em>сколько</em> теплоты отдано, берут положительное значение |Q|.</p>
+          </section>
+        </div>
+        <details class="notes-disclosure"><summary>Посмотреть исходный конспект</summary><div><img src="assets/notes.jpg" width="1400" height="1113" alt="Фото страницы с формулами: c, Q, m, изменение и начальная температура"><p>Формулы и обозначения взяты из приложенного фото. Запись для t₂ и пояснение о знаке Q выведены из основной формулы.</p></div></details>
+      </section>
+
+      <section id="interactive" class="view" aria-labelledby="interactive-title" hidden>
+        <div class="section-heading"><div><span class="kicker">02 / ИНТЕРАКТИВ</span><h2 id="interactive-title">Проверь, как работает формула</h2></div><p>Меняй значения и сразу смотри результат.</p></div>
+        <div class="subnav" role="tablist" aria-label="Интерактивные модели">
+          <button type="button" role="tab" class="subnav-button active" aria-selected="true" data-model="experiment">Опыт с температурой</button>
+          <button type="button" role="tab" class="subnav-button" aria-selected="false" data-model="builder">Собери формулу</button>
+          <button type="button" role="tab" class="subnav-button" aria-selected="false" data-model="units">Проверь единицы</button>
+          <button type="button" role="tab" class="subnav-button" aria-selected="false" data-model="mistake">Найди ошибку</button>
+        </div>
+        <div id="model-experiment" class="model-panel active">
+          <div class="interactive-layout">
+            <div class="card sliders-card"><div class="card-heading"><span class="card-index">1</span><h3>Задай условия</h3></div>
+              <label class="slider-row" for="heat-c"><span>c <small>Дж/(кг·°C)</small></span><output id="heat-c-value">400</output><input id="heat-c" type="range" min="100" max="1000" step="100" value="400"></label>
+              <label class="slider-row" for="heat-m"><span>m <small>кг</small></span><output id="heat-m-value">2</output><input id="heat-m" type="range" min="0.5" max="5" step="0.5" value="2"></label>
+              <label class="slider-row" for="heat-t1"><span>t₁ <small>°C</small></span><output id="heat-t1-value">20</output><input id="heat-t1" type="range" min="0" max="100" step="1" value="20"></label>
+              <label class="slider-row" for="heat-t2"><span>t₂ <small>°C</small></span><output id="heat-t2-value">40</output><input id="heat-t2" type="range" min="0" max="100" step="1" value="40"></label>
+            </div>
+            <div class="card result-card"><div class="card-heading"><span class="card-index">2</span><h3>Наблюдай результат</h3></div>
+              <div class="temperature-bars" aria-label="Сравнение температур"><div class="temp-bar-row"><span>Было · t₁</span><div class="temp-track"><div id="bar-t1" class="temp-fill before"></div></div><strong id="temp-label-t1">20 °C</strong></div><div class="temp-bar-row"><span>Стало · t₂</span><div class="temp-track"><div id="bar-t2" class="temp-fill after"></div></div><strong id="temp-label-t2">40 °C</strong></div></div>
+              <div class="result-equation" id="heat-substitution"></div>
+              <div class="heat-result"><span>Количество теплоты</span><strong id="heat-output">8 000 Дж</strong></div>
+              <p class="result-explanation" id="heat-explanation" aria-live="polite"></p>
+              <button type="button" class="text-action" id="swap-temperatures">Поменять t₁ и t₂ местами ↔</button>
+            </div>
+          </div>
+        </div>
+        <div id="model-builder" class="model-panel" hidden><div class="card model-card">
+          <div class="card-heading"><span class="card-index">1</span><h3>Выведи формулу</h3></div>
+          <p>Выбери величину, затем правильное выражение. Можно проверить все шесть формул.</p>
+          <div class="target-select" id="builder-targets" role="group" aria-label="Искомая величина"></div>
+          <div class="model-prompt" id="builder-prompt"></div>
+          <div class="answer-grid" id="builder-options"></div>
+          <div class="model-feedback" id="builder-feedback" aria-live="polite"></div>
+        </div></div>
+        <div id="model-units" class="model-panel" hidden><div class="card model-card">
+          <div class="card-heading"><span class="card-index">2</span><h3>Сократи единицы</h3></div>
+          <p>Определи единицу результата, если подставить единицы величин в формулу.</p>
+          <div class="target-select" id="unit-targets" role="group" aria-label="Выбери величину для проверки единиц"></div>
+          <div class="model-prompt" id="unit-expression"></div>
+          <div class="answer-grid" id="unit-options"></div>
+          <div class="model-feedback" id="unit-feedback" aria-live="polite"></div>
+        </div></div>
+        <div id="model-mistake" class="model-panel" hidden><div class="card model-card">
+          <div class="card-heading"><span class="card-index">3</span><h3>Найди неверный шаг</h3></div>
+          <p>В каждом решении одна ошибка. Нажми на строку с ошибкой.</p>
+          <div class="target-select" id="mistake-targets" role="group" aria-label="Выбери пример"></div>
+          <div class="model-prompt" id="mistake-prompt"></div>
+          <div class="answer-grid" id="mistake-options"></div>
+          <div class="model-feedback" id="mistake-feedback" aria-live="polite"></div>
+        </div></div>
+      </section>
+
+      <section id="practice" class="view" aria-labelledby="practice-title" hidden>
+        <div class="section-heading"><div><span class="kicker">03 / ТРЕНИРОВКА</span><h2 id="practice-title">Один вопрос за раз</h2></div><p>После ответа сразу увидишь объяснение. Следующий вопрос — по твоей команде.</p></div>
+        <div class="practice-controls"><label>Тема<select id="practice-section"><option value="all">Все темы</option></select></label><label>Навык<select id="practice-skill"><option value="all">Все навыки</option></select></label><span id="practice-count" class="count-label"></span></div>
+        <div id="practice-card" class="question-card"></div>
+      </section>
+
+      <section id="exam" class="view" aria-labelledby="exam-title" hidden>
+        <div class="section-heading"><div><span class="kicker">04 / ОПРОС</span><h2 id="exam-title">Проверь себя без подсказок</h2></div><p>12 заданий: формулы, единицы, понимание, расчёт и один устный ответ. Результат в конце.</p></div>
+        <div id="exam-area"></div>
+      </section>
+
+      <section id="stats" class="view" aria-labelledby="stats-title" hidden>
+        <div class="section-heading"><div><span class="kicker">05 / ПРОГРЕСС</span><h2 id="stats-title">Что уже получается</h2></div><p>Результаты сохраняются только на этом устройстве.</p></div>
+        <div id="stats-area"></div>
+        <button type="button" class="reset-button" id="reset-stats">Сбросить статистику</button>
+      </section>
+    </main>
+    <footer class="site-footer">По приложенному конспекту · Числа в задачах — примеры для тренировки формул</footer>
+  </div>
+</body>
+</html>
